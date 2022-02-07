@@ -19,6 +19,7 @@ namespace ADO_EF
             Firm = new Model.FirmContext();
             //Firm.InstallDepartments();
             //Firm.InstallManagers();
+            //Firm.InstallProducts();
         }
 
         private void Form1_Load(object sender, EventArgs e)

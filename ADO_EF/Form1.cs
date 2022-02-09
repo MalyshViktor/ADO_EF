@@ -26,6 +26,8 @@ namespace ADO_EF
         {
             MessageBox.Show(Firm.Departments.Count().ToString());
             MessageBox.Show(Firm.Managers.Count().ToString());
+            MessageBox.Show(Firm.Products.Count().ToString());
+            MessageBox.Show(Firm.Sales.Count().ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +46,25 @@ namespace ADO_EF
             {
                 listBox1.Items.Add(man);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            foreach (var prod in Firm.Products.OrderByDescending(p => p.Name))
+            {
+                listBox1.Items.Add(prod);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            foreach (var sal in Firm.Sales.OrderByDescending(p => p.Id))
+            {
+                listBox1.Items.Add(sal);
+            }
+
         }
     }
 }

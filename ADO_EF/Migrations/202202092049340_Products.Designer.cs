@@ -7,13 +7,13 @@ namespace ADO_EF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class Products : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Products));
         
         string IMigrationMetadata.Id
         {
-            get { return "202202091609043_InitialCreate"; }
+            get { return "202202092049340_Products"; }
         }
         
         string IMigrationMetadata.Source

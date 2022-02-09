@@ -12,5 +12,10 @@ namespace ADO_EF.Model
         public String Name { get; set; }
         //! типу float в БД соответствует тип double
         public double Price { get; set; }
+        public override string ToString()
+        {
+            return Name + " - " + Price;
+
+        }
     }
 }

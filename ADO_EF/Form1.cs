@@ -17,6 +17,8 @@ namespace ADO_EF
         public Form1()
         {
             InitializeComponent();
+            DateTimePicker dateTimePicker1 = new DateTimePicker();
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
             Firm = new Model.FirmContext();
             //Firm.InstallDepartments();
             //Firm.InstallManagers();
@@ -95,7 +97,7 @@ namespace ADO_EF
                     .First()                                                                        //  Выбираем первый элемент (из всего результата)
                     .Id,                                                                            //  Берем из него Id
                     Cnt = random.Next(1, 10),                                                           
-                    Moment = DateTime.Parse($"2021-01-01").AddSeconds(random.Next(60*60*24*365))        
+                    Moment = DateTime.Parse($"2021-01-01").AddSeconds(random.Next(60*60*24*365))
                 });
 
                 --n;
@@ -111,7 +113,8 @@ namespace ADO_EF
         private void button5_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            foreach (var item in Firm.Sales.Join
+            foreach (var item in Firm.Sales.
+                Join
                 (Firm.Managers,
                 s => s.Id_manager,
                 m => m.Id,
@@ -125,7 +128,29 @@ namespace ADO_EF
                     +item.Manager.Surname + " " + item.Manager.Name.Substring(0,1) + " " + item.Manager.SecName.Substring(0, 1)
                     + " - " + item.Product.Name
                     + " - " + item.Sale.Cnt + " pcs "
-                     + " - " + item.Product.Price * item.Sale.Cnt + "$");
+                     + " - " + item.Product.Price * item.Sale.Cnt + "uah");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            foreach (var item in Firm.Sales.Where(s => s.Moment == dateTimePicker1.Value).
+                Join
+                (Firm.Managers,
+                s => s.Id_manager,
+                m => m.Id,
+                (Sale, Manager) => new { Sale, Manager })
+                .Join(Firm.Products, sm => sm.Sale.Id_product, p => p.Id,
+                (sm, Product) => new { Sale = sm.Sale, sm.Manager, Product }
+                ))
+            {
+                listBox1.Items.Add(item.Sale.Moment.ToShortDateString()
+                    + " "
+                    + item.Manager.Surname + " " + item.Manager.Name.Substring(0, 1) + " " + item.Manager.SecName.Substring(0, 1)
+                    + " - " + item.Product.Name
+                    + " - " + item.Sale.Cnt + " pcs "
+                    + " - " + item.Product.Price * item.Sale.Cnt + "$");
             }
         }
     }

@@ -13,6 +13,7 @@ namespace ADO_EF.Model
         public DbSet<Department> Departments { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Sale> Sales { get; set; }
+
         public void InstallDepartments()
         {
             while (Departments.Any())
@@ -153,12 +154,6 @@ namespace ADO_EF.Model
             Products.Add(new Product {Id = Guid.Parse("4A550D3B-D1F2-40EF-AE4E-963612C6713A"), Name = "Сварочный аппарат",		    Price = 2099   });
             Products.Add(new Product {Id = Guid.Parse("17DB11D1-F50E-4CF4-9C54-CF1BD45802EA"), Name = "Электроды 3мм",			    Price = 49.98  });
             Products.Add(new Product {Id = Guid.Parse("7264D33A-16B9-4E22-B3F1-63D6DAE60078"), Name = "Паяльник 40 Вт",            Price = 199.98 });
-
-            SaveChanges();
-        }
-
-        public void CreateSales()
-        {
 
             SaveChanges();
         }

@@ -34,20 +34,38 @@ namespace ADO_EF
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.GenCnt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LabelSales = new System.Windows.Forms.Label();
+            this.LabelProducts = new System.Windows.Forms.Label();
+            this.LabelManagers = new System.Windows.Forms.Label();
+            this.LabelDepartments = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(233, 68);
+            this.listBox1.Location = new System.Drawing.Point(376, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(351, 244);
+            this.listBox1.Size = new System.Drawing.Size(297, 244);
             this.listBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(126, 68);
+            this.button1.Location = new System.Drawing.Point(79, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 23);
             this.button1.TabIndex = 1;
@@ -57,7 +75,7 @@ namespace ADO_EF
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(126, 107);
+            this.button2.Location = new System.Drawing.Point(79, 60);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 23);
             this.button2.TabIndex = 2;
@@ -67,7 +85,7 @@ namespace ADO_EF
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(126, 147);
+            this.button3.Location = new System.Drawing.Point(79, 102);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 23);
             this.button3.TabIndex = 3;
@@ -77,20 +95,168 @@ namespace ADO_EF
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(126, 185);
+            this.button4.Location = new System.Drawing.Point(6, 100);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 23);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Sales";
+            this.button4.Text = "Generate";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // GenCnt
+            // 
+            this.GenCnt.Location = new System.Drawing.Point(6, 62);
+            this.GenCnt.Name = "GenCnt";
+            this.GenCnt.Size = new System.Drawing.Size(90, 23);
+            this.GenCnt.TabIndex = 5;
+            this.GenCnt.Text = "100";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Сгенерировать запись";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.GenCnt);
+            this.groupBox1.Location = new System.Drawing.Point(73, 137);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(154, 129);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sales";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.LabelSales);
+            this.groupBox2.Controls.Add(this.LabelProducts);
+            this.groupBox2.Controls.Add(this.LabelManagers);
+            this.groupBox2.Controls.Add(this.LabelDepartments);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(763, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(254, 244);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Статистика БД";
+            // 
+            // LabelSales
+            // 
+            this.LabelSales.AutoSize = true;
+            this.LabelSales.Location = new System.Drawing.Point(101, 125);
+            this.LabelSales.Name = "LabelSales";
+            this.LabelSales.Size = new System.Drawing.Size(13, 15);
+            this.LabelSales.TabIndex = 7;
+            this.LabelSales.Text = "0";
+            // 
+            // LabelProducts
+            // 
+            this.LabelProducts.AutoSize = true;
+            this.LabelProducts.Location = new System.Drawing.Point(101, 90);
+            this.LabelProducts.Name = "LabelProducts";
+            this.LabelProducts.Size = new System.Drawing.Size(13, 15);
+            this.LabelProducts.TabIndex = 6;
+            this.LabelProducts.Text = "0";
+            // 
+            // LabelManagers
+            // 
+            this.LabelManagers.AutoSize = true;
+            this.LabelManagers.Location = new System.Drawing.Point(101, 56);
+            this.LabelManagers.Name = "LabelManagers";
+            this.LabelManagers.Size = new System.Drawing.Size(13, 15);
+            this.LabelManagers.TabIndex = 5;
+            this.LabelManagers.Text = "0";
+            // 
+            // LabelDepartments
+            // 
+            this.LabelDepartments.AutoSize = true;
+            this.LabelDepartments.Location = new System.Drawing.Point(101, 25);
+            this.LabelDepartments.Name = "LabelDepartments";
+            this.LabelDepartments.Size = new System.Drawing.Size(13, 15);
+            this.LabelDepartments.TabIndex = 4;
+            this.LabelDepartments.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 125);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Продаж";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Товаров";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Сотрудников";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Отделов";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(6, 22);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(90, 23);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Sales";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 71);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Location = new System.Drawing.Point(73, 318);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(221, 100);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(1188, 569);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -98,6 +264,11 @@ namespace ADO_EF
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -109,6 +280,21 @@ namespace ADO_EF
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox GenCnt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LabelSales;
+        private System.Windows.Forms.Label LabelProducts;
+        private System.Windows.Forms.Label LabelManagers;
+        private System.Windows.Forms.Label LabelDepartments;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

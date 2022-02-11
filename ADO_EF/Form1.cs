@@ -117,13 +117,15 @@ namespace ADO_EF
                 m => m.Id,
                 (Sale, Manager) => new { Sale, Manager })
                 .Join(Firm.Products, sm => sm.Sale.Id_product, p => p.Id,
-                (sm, product) => new{ Sale = sm.Sale, sm.Manager, product }
+                (sm, Product) => new{ Sale = sm.Sale, sm.Manager, Product }
                 ))
             {
                 listBox1.Items.Add(item.Sale.Moment.ToShortDateString()
                     + " "
                     +item.Manager.Surname + " " + item.Manager.Name.Substring(0,1) + " " + item.Manager.SecName.Substring(0, 1)
-                    + " " item.);
+                    + " - " + item.Product.Name
+                    + " - " + item.Sale.Cnt + " pcs "
+                     + " - " + item.Product.Price * item.Sale.Cnt + "$");
             }
         }
     }

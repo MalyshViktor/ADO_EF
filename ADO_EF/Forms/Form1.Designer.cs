@@ -1,7 +1,7 @@
 ﻿
 namespace ADO_EF
 {
-    partial class Form1
+    public partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
@@ -50,9 +50,15 @@ namespace ADO_EF
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.buttonForm2 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonAddProduct = new System.Windows.Forms.Button();
+            this.buttonAddDepartment = new System.Windows.Forms.Button();
+            this.buttonAddManager = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -261,11 +267,63 @@ namespace ADO_EF
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // buttonForm2
+            // 
+            this.buttonForm2.Location = new System.Drawing.Point(219, 12);
+            this.buttonForm2.Name = "buttonForm2";
+            this.buttonForm2.Size = new System.Drawing.Size(75, 23);
+            this.buttonForm2.TabIndex = 12;
+            this.buttonForm2.Text = "Form2";
+            this.buttonForm2.UseVisualStyleBackColor = true;
+            this.buttonForm2.Click += new System.EventHandler(this.buttonForm2_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.buttonAddManager);
+            this.groupBox4.Controls.Add(this.buttonAddDepartment);
+            this.groupBox4.Controls.Add(this.buttonAddProduct);
+            this.groupBox4.Location = new System.Drawing.Point(352, 327);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(200, 201);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Добавить в БД";
+            // 
+            // buttonAddProduct
+            // 
+            this.buttonAddProduct.Location = new System.Drawing.Point(63, 22);
+            this.buttonAddProduct.Name = "buttonAddProduct";
+            this.buttonAddProduct.Size = new System.Drawing.Size(75, 22);
+            this.buttonAddProduct.TabIndex = 0;
+            this.buttonAddProduct.Text = "Товар";
+            this.buttonAddProduct.UseVisualStyleBackColor = true;
+            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
+            // 
+            // buttonAddDepartment
+            // 
+            this.buttonAddDepartment.Location = new System.Drawing.Point(63, 62);
+            this.buttonAddDepartment.Name = "buttonAddDepartment";
+            this.buttonAddDepartment.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddDepartment.TabIndex = 1;
+            this.buttonAddDepartment.Text = "Отдел";
+            this.buttonAddDepartment.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddManager
+            // 
+            this.buttonAddManager.Location = new System.Drawing.Point(63, 101);
+            this.buttonAddManager.Name = "buttonAddManager";
+            this.buttonAddManager.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddManager.TabIndex = 2;
+            this.buttonAddManager.Text = "Сотрудник";
+            this.buttonAddManager.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 569);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.buttonForm2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -281,6 +339,7 @@ namespace ADO_EF
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -308,6 +367,11 @@ namespace ADO_EF
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonForm2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button buttonAddManager;
+        private System.Windows.Forms.Button buttonAddDepartment;
+        private System.Windows.Forms.Button buttonAddProduct;
     }
 }
 

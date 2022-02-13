@@ -7,19 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+
+using Microsoft.Practices.Unity;
 
 namespace ADO_EF
 {
     public partial class Form1 : Form
     {
-        private Model.FirmContext Firm;
+        [Dependency] public Model.FirmContext Firm { get; set; }
+
         private Random random = new();
         public Form1()
         {
             InitializeComponent();
-            DateTimePicker dateTimePicker1 = new DateTimePicker();
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            Firm = new Model.FirmContext();
+            
+
+            //DateTimePicker dateTimePicker1 = new DateTimePicker();
+            //dateTimePicker1.Format = DateTimePickerFormat.Short;
+            //Firm = new Model.FirmContext();
             //Firm.InstallDepartments();
             //Firm.InstallManagers();
             //Firm.InstallProducts();
@@ -27,6 +33,10 @@ namespace ADO_EF
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (Firm.Departments.Count() == 0) Firm.InstallDepartments();
+            if (Firm.Managers.Count() == 0) Firm.InstallManagers();
+            if (Firm.Products.Count() == 0) Firm.InstallProducts();
+
             LabelDepartments.Text = Firm.Departments.Count().ToString();
             LabelManagers.Text = Firm.Managers.Count().ToString();
             LabelProducts.Text = Firm.Products.Count().ToString();
@@ -135,7 +145,7 @@ namespace ADO_EF
         private void button6_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            foreach (var item in Firm.Sales.Where(s => s.Moment == dateTimePicker1.Value).
+            foreach (var item in Firm.Sales.Where(s => DbFunctions.TruncateTime(s.Moment) == dateTimePicker1.Value.Date).
                 Join
                 (Firm.Managers,
                 s => s.Id_manager,
@@ -152,6 +162,19 @@ namespace ADO_EF
                     + " - " + item.Sale.Cnt + " pcs "
                     + " - " + item.Product.Price * item.Sale.Cnt + "$");
             }
+        }
+
+        private void buttonForm2_Click(object sender, EventArgs e)
+        {
+            //new Form2().ShowDialog(this);
+            Program.Container.Resolve<Form2>().ShowDialog(this);
+        }
+
+        private void buttonAddProduct_Click(object sender, EventArgs e)
+        {
+            Program.Container.
+                Resolve<Forms.AddProductForm>().ShowDialog(this);
+            LabelProducts.Text = Firm.Products.Count().ToString();
         }
     }
 }

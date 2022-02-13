@@ -7,12 +7,14 @@ using System.Data.Entity;
 
 namespace ADO_EF.Model
 {
-    class FirmContext: DbContext
+    public class FirmContext: DbContext
     {
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Sale> Sales { get; set; }
+
+
 
         public void InstallDepartments()
         {

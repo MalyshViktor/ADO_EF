@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO_EF.Model
 {
-    class Product
+    public class Product
     {
         public Guid Id { get; set; }
         public String Name { get; set; }

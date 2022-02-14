@@ -21,7 +21,7 @@ namespace ADO_EF
         public Form1()
         {
             InitializeComponent();
-            
+            BackColor = Color.SeaShell;
 
             //DateTimePicker dateTimePicker1 = new DateTimePicker();
             //dateTimePicker1.Format = DateTimePickerFormat.Short;
@@ -175,6 +175,20 @@ namespace ADO_EF
             Program.Container.
                 Resolve<Forms.AddProductForm>().ShowDialog(this);
             LabelProducts.Text = Firm.Products.Count().ToString();
+        }
+
+        private void buttonAddDepartment_Click(object sender, EventArgs e)
+        {
+            Program.Container.
+                Resolve<Forms.AddDepartmentForm>().ShowDialog(this);
+                LabelDepartments.Text = Firm.Departments.Count().ToString();
+        }
+
+        private void buttonAddManager_Click(object sender, EventArgs e)
+        {
+            Program.Container.
+            Resolve<Forms.AddManagerForm>().ShowDialog(this);
+            LabelManagers.Text = Firm.Managers.Count().ToString();
         }
     }
 }

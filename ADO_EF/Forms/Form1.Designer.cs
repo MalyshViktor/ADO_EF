@@ -52,9 +52,9 @@ namespace ADO_EF
             this.button6 = new System.Windows.Forms.Button();
             this.buttonForm2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.buttonAddProduct = new System.Windows.Forms.Button();
-            this.buttonAddDepartment = new System.Windows.Forms.Button();
             this.buttonAddManager = new System.Windows.Forms.Button();
+            this.buttonAddDepartment = new System.Windows.Forms.Button();
+            this.buttonAddProduct = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -63,11 +63,13 @@ namespace ADO_EF
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.listBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(376, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(381, 244);
+            this.listBox1.Size = new System.Drawing.Size(381, 544);
             this.listBox1.TabIndex = 0;
             // 
             // button1
@@ -92,7 +94,7 @@ namespace ADO_EF
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(79, 102);
+            this.button3.Location = new System.Drawing.Point(79, 108);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 23);
             this.button3.TabIndex = 3;
@@ -102,9 +104,9 @@ namespace ADO_EF
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(6, 100);
+            this.button4.Location = new System.Drawing.Point(52, 101);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 23);
+            this.button4.Size = new System.Drawing.Size(107, 23);
             this.button4.TabIndex = 4;
             this.button4.Text = "Generate";
             this.button4.UseVisualStyleBackColor = true;
@@ -112,16 +114,16 @@ namespace ADO_EF
             // 
             // GenCnt
             // 
-            this.GenCnt.Location = new System.Drawing.Point(6, 62);
+            this.GenCnt.Location = new System.Drawing.Point(52, 62);
             this.GenCnt.Name = "GenCnt";
-            this.GenCnt.Size = new System.Drawing.Size(90, 23);
+            this.GenCnt.Size = new System.Drawing.Size(107, 23);
             this.GenCnt.TabIndex = 5;
             this.GenCnt.Text = "100";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Location = new System.Drawing.Point(41, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 15);
             this.label1.TabIndex = 6;
@@ -134,10 +136,10 @@ namespace ADO_EF
             this.groupBox1.Controls.Add(this.GenCnt);
             this.groupBox1.Location = new System.Drawing.Point(73, 137);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(154, 129);
+            this.groupBox1.Size = new System.Drawing.Size(221, 130);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sales";
+            this.groupBox1.Text = "Генератор Продаж";
             // 
             // groupBox2
             // 
@@ -149,7 +151,7 @@ namespace ADO_EF
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(763, 12);
+            this.groupBox2.Location = new System.Drawing.Point(844, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(254, 244);
             this.groupBox2.TabIndex = 8;
@@ -230,9 +232,9 @@ namespace ADO_EF
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(55, 22);
+            this.button5.Location = new System.Drawing.Point(52, 22);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 23);
+            this.button5.Size = new System.Drawing.Size(107, 23);
             this.button5.TabIndex = 9;
             this.button5.Text = "Sales";
             this.button5.UseVisualStyleBackColor = true;
@@ -240,7 +242,7 @@ namespace ADO_EF
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 181);
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 101);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker1.TabIndex = 10;
@@ -250,18 +252,18 @@ namespace ADO_EF
             this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Location = new System.Drawing.Point(73, 318);
+            this.groupBox3.Location = new System.Drawing.Point(73, 282);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(221, 210);
+            this.groupBox3.Size = new System.Drawing.Size(221, 137);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Продажи";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(55, 51);
+            this.button6.Location = new System.Drawing.Point(52, 62);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 23);
+            this.button6.Size = new System.Drawing.Size(107, 23);
             this.button6.TabIndex = 11;
             this.button6.Text = "By date";
             this.button6.UseVisualStyleBackColor = true;
@@ -282,40 +284,42 @@ namespace ADO_EF
             this.groupBox4.Controls.Add(this.buttonAddManager);
             this.groupBox4.Controls.Add(this.buttonAddDepartment);
             this.groupBox4.Controls.Add(this.buttonAddProduct);
-            this.groupBox4.Location = new System.Drawing.Point(352, 327);
+            this.groupBox4.Location = new System.Drawing.Point(73, 425);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 201);
+            this.groupBox4.Size = new System.Drawing.Size(221, 137);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Добавить в БД";
             // 
+            // buttonAddManager
+            // 
+            this.buttonAddManager.Location = new System.Drawing.Point(52, 101);
+            this.buttonAddManager.Name = "buttonAddManager";
+            this.buttonAddManager.Size = new System.Drawing.Size(107, 23);
+            this.buttonAddManager.TabIndex = 2;
+            this.buttonAddManager.Text = "Сотрудник";
+            this.buttonAddManager.UseVisualStyleBackColor = true;
+            this.buttonAddManager.Click += new System.EventHandler(this.buttonAddManager_Click);
+            // 
+            // buttonAddDepartment
+            // 
+            this.buttonAddDepartment.Location = new System.Drawing.Point(52, 62);
+            this.buttonAddDepartment.Name = "buttonAddDepartment";
+            this.buttonAddDepartment.Size = new System.Drawing.Size(107, 23);
+            this.buttonAddDepartment.TabIndex = 1;
+            this.buttonAddDepartment.Text = "Отдел";
+            this.buttonAddDepartment.UseVisualStyleBackColor = true;
+            this.buttonAddDepartment.Click += new System.EventHandler(this.buttonAddDepartment_Click);
+            // 
             // buttonAddProduct
             // 
-            this.buttonAddProduct.Location = new System.Drawing.Point(63, 22);
+            this.buttonAddProduct.Location = new System.Drawing.Point(52, 23);
             this.buttonAddProduct.Name = "buttonAddProduct";
-            this.buttonAddProduct.Size = new System.Drawing.Size(75, 22);
+            this.buttonAddProduct.Size = new System.Drawing.Size(107, 22);
             this.buttonAddProduct.TabIndex = 0;
             this.buttonAddProduct.Text = "Товар";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
             this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
-            // 
-            // buttonAddDepartment
-            // 
-            this.buttonAddDepartment.Location = new System.Drawing.Point(63, 62);
-            this.buttonAddDepartment.Name = "buttonAddDepartment";
-            this.buttonAddDepartment.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddDepartment.TabIndex = 1;
-            this.buttonAddDepartment.Text = "Отдел";
-            this.buttonAddDepartment.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddManager
-            // 
-            this.buttonAddManager.Location = new System.Drawing.Point(63, 101);
-            this.buttonAddManager.Name = "buttonAddManager";
-            this.buttonAddManager.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddManager.TabIndex = 2;
-            this.buttonAddManager.Text = "Сотрудник";
-            this.buttonAddManager.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -332,6 +336,7 @@ namespace ADO_EF
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

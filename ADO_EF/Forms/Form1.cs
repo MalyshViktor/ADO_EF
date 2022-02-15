@@ -190,5 +190,12 @@ namespace ADO_EF
             Resolve<Forms.AddManagerForm>().ShowDialog(this);
             LabelManagers.Text = Firm.Managers.Count().ToString();
         }
+
+        private void buttonSale_Click(object sender, EventArgs e)
+        {
+            Program.Container.
+                Resolve<Forms.SaleForm>().ShowDialog(this);
+            LabelSales.Text = Firm.Sales.Count().ToString();
+        }
     }
 }

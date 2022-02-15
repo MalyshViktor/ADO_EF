@@ -55,6 +55,7 @@ namespace ADO_EF
             this.buttonAddManager = new System.Windows.Forms.Button();
             this.buttonAddDepartment = new System.Windows.Forms.Button();
             this.buttonAddProduct = new System.Windows.Forms.Button();
+            this.buttonSale = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -131,12 +132,13 @@ namespace ADO_EF
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonSale);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.GenCnt);
-            this.groupBox1.Location = new System.Drawing.Point(73, 137);
+            this.groupBox1.Location = new System.Drawing.Point(844, 276);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(221, 130);
+            this.groupBox1.Size = new System.Drawing.Size(221, 221);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Генератор Продаж";
@@ -252,7 +254,7 @@ namespace ADO_EF
             this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Location = new System.Drawing.Point(73, 282);
+            this.groupBox3.Location = new System.Drawing.Point(73, 158);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(221, 137);
             this.groupBox3.TabIndex = 11;
@@ -284,7 +286,7 @@ namespace ADO_EF
             this.groupBox4.Controls.Add(this.buttonAddManager);
             this.groupBox4.Controls.Add(this.buttonAddDepartment);
             this.groupBox4.Controls.Add(this.buttonAddProduct);
-            this.groupBox4.Location = new System.Drawing.Point(73, 425);
+            this.groupBox4.Location = new System.Drawing.Point(73, 326);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(221, 137);
             this.groupBox4.TabIndex = 13;
@@ -320,6 +322,16 @@ namespace ADO_EF
             this.buttonAddProduct.Text = "Товар";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
             this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
+            // 
+            // buttonSale
+            // 
+            this.buttonSale.Location = new System.Drawing.Point(52, 141);
+            this.buttonSale.Name = "buttonSale";
+            this.buttonSale.Size = new System.Drawing.Size(107, 23);
+            this.buttonSale.TabIndex = 7;
+            this.buttonSale.Text = "Оформить";
+            this.buttonSale.UseVisualStyleBackColor = true;
+            this.buttonSale.Click += new System.EventHandler(this.buttonSale_Click);
             // 
             // Form1
             // 
@@ -377,6 +389,7 @@ namespace ADO_EF
         private System.Windows.Forms.Button buttonAddManager;
         private System.Windows.Forms.Button buttonAddDepartment;
         private System.Windows.Forms.Button buttonAddProduct;
+        private System.Windows.Forms.Button buttonSale;
     }
 }
 

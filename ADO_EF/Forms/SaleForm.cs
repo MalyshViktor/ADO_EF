@@ -26,6 +26,7 @@ namespace ADO_EF.Forms
             {
                 comboBoxProducts.Items.Add(product);
             }
+            comboBoxManager.Items.Clear();
             foreach (Model.Manager manager in _Firm.Managers.OrderBy(m=>m.Surname))
             {
                 comboBoxManager.Items.Add(manager);

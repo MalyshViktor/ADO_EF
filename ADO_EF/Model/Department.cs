@@ -13,8 +13,7 @@ namespace ADO_EF.Model
         public override string ToString()
         {
             return Name + " (" + Id.ToString().Substring(25) + ")";
-
         }
-
+        
     }
 }

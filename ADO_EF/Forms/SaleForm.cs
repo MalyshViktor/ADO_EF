@@ -82,7 +82,7 @@ namespace ADO_EF.Forms
                 Id_product = (comboBoxProducts.SelectedItem
                 as Model.Product).Id,
                 Cnt = cnt,
-                Moment = DateTime.Now
+                Moment = dateTimePicker1.Value
 
             });
             _Firm.SaveChanges();

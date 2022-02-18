@@ -45,29 +45,17 @@ namespace ADO_EF
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            foreach (var dep in Firm.Departments.OrderByDescending(d => d.Name))
-            {
-                listBox1.Items.Add(dep);   
-            }
+            DisplayDepartments();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            foreach (var man in Firm.Managers.OrderByDescending(m=> m.Surname))
-            {
-                listBox1.Items.Add(man);
-            }
+            DisplayManagers();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            foreach (Model.Product prod in Firm.Products.OrderByDescending(p => p.Name))
-            {
-                listBox1.Items.Add(prod);
-            }
+            DisplayProducts();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -145,6 +133,7 @@ namespace ADO_EF
         private void button6_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+            
             foreach (var item in Firm.Sales.Where(s => DbFunctions.TruncateTime(s.Moment) == dateTimePicker1.Value.Date).
                 Join
                 (Firm.Managers,
@@ -219,11 +208,7 @@ namespace ADO_EF
                 {
                     Firm.SaveChanges();
                     MessageBox.Show("Изменения внесены");
-                    listBox1.Items.Clear();
-                    foreach (Model.Product prod in Firm.Products.OrderByDescending(p => p.Name))
-                    {
-                        listBox1.Items.Add(prod);
-                    }
+                    DisplayProducts();
                 }
                 else 
                 {
@@ -243,17 +228,14 @@ namespace ADO_EF
                 {
                     Firm.SaveChanges();
                     MessageBox.Show("Изменения внесены");
-                    listBox1.Items.Clear();
-                    foreach (var dep in Firm.Departments.OrderByDescending(d => d.Name))
-                    {
-                        listBox1.Items.Add(dep);
-                    }
+                    DisplayDepartments();
                 }
                 else
                 {
                     MessageBox.Show("Изменения отменены");
                 }
             }
+            //EditManagerForm
             if (listBox1.SelectedItem is Model.Manager)
             {
                 Forms.EditManagerForm editManagerForm =
@@ -262,6 +244,63 @@ namespace ADO_EF
                 editManagerForm.EditedManager = listBox1.SelectedItem as Model.Manager;
 
                 editManagerForm.ShowDialog(this);
+                if (editManagerForm.DialogResult == DialogResult.OK)
+                {
+                    Firm.SaveChanges();
+                    MessageBox.Show("Изменения внесены");
+                    listBox1.Items.Clear();
+                    DisplayManagers();
+                }
+                else
+                {
+                    MessageBox.Show("Изменения отменены");
+                }
+            }
+            //EditSaleForm
+            if (listBox1.SelectedItem is String)
+            {
+                Forms.EditSaleForm editSaleForm =
+                    Program.Container.
+                    Resolve<Forms.EditSaleForm>();
+                editSaleForm.EditedSale = listBox1.SelectedItem as Model.Sale;
+
+                editSaleForm.ShowDialog(this);
+                if (editSaleForm.DialogResult == DialogResult.OK)
+                {
+                    Firm.SaveChanges();
+                    MessageBox.Show("Изменения внесены");
+                    listBox1.Items.Clear();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Изменения отменены");
+                }
+            }
+        }
+
+        private void DisplayManagers()
+        {
+            listBox1.Items.Clear();
+            foreach (var manager in Firm.Managers.OrderByDescending(m => m.Surname))
+            {
+                listBox1.Items.Add(manager);
+            }
+        }       
+        private void DisplayProducts()
+        {
+            listBox1.Items.Clear();
+            foreach (Model.Product prod in Firm.Products.OrderByDescending(p => p.Name))
+            {
+                listBox1.Items.Add(prod);
+            }
+        }       
+        private void DisplayDepartments()
+        {
+            listBox1.Items.Clear();
+            foreach (var dep in Firm.Departments.OrderByDescending(d => d.Name))
+            {
+                listBox1.Items.Add(dep);
             }
         }
     }

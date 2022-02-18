@@ -31,13 +31,14 @@ namespace ADO_EF.Forms
             {
                 comboBoxManager.Items.Add(manager);
             }
+
         }
 
         private void comboBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             int SelectedIndex = comboBoxProducts.SelectedIndex;
             if (SelectedIndex == -1) return;
-            Model.Product product = comboBoxProducts.Items[SelectedIndex] //SelectedItem 
+            Model.Product products = comboBoxProducts.Items[SelectedIndex] //SelectedItem 
                 as Model.Product;
 
         }

@@ -135,6 +135,7 @@ namespace ADO_EF.Forms
             // 
             // comboBoxIdMainDept
             // 
+            this.comboBoxIdMainDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIdMainDept.FormattingEnabled = true;
             this.comboBoxIdMainDept.Location = new System.Drawing.Point(216, 269);
             this.comboBoxIdMainDept.Name = "comboBoxIdMainDept";
@@ -152,6 +153,7 @@ namespace ADO_EF.Forms
             // 
             // comboBoxIdSecDept
             // 
+            this.comboBoxIdSecDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIdSecDept.FormattingEnabled = true;
             this.comboBoxIdSecDept.Location = new System.Drawing.Point(216, 307);
             this.comboBoxIdSecDept.Name = "comboBoxIdSecDept";
@@ -169,6 +171,7 @@ namespace ADO_EF.Forms
             // 
             // comboBoxIdChief
             // 
+            this.comboBoxIdChief.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIdChief.FormattingEnabled = true;
             this.comboBoxIdChief.Location = new System.Drawing.Point(216, 348);
             this.comboBoxIdChief.Name = "comboBoxIdChief";
@@ -183,6 +186,7 @@ namespace ADO_EF.Forms
             this.buttonSave.TabIndex = 15;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonExit
             // 
@@ -192,6 +196,7 @@ namespace ADO_EF.Forms
             this.buttonExit.TabIndex = 16;
             this.buttonExit.Text = "Выход";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // EditManagerForm
             // 

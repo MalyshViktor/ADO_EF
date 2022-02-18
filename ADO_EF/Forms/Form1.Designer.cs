@@ -37,6 +37,7 @@ namespace ADO_EF
             this.GenCnt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonSale = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.LabelSales = new System.Windows.Forms.Label();
             this.LabelProducts = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@ namespace ADO_EF
             this.buttonAddManager = new System.Windows.Forms.Button();
             this.buttonAddDepartment = new System.Windows.Forms.Button();
             this.buttonAddProduct = new System.Windows.Forms.Button();
-            this.buttonSale = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -72,6 +72,7 @@ namespace ADO_EF
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(381, 544);
             this.listBox1.TabIndex = 0;
+            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // button1
             // 
@@ -142,6 +143,16 @@ namespace ADO_EF
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Генератор Продаж";
+            // 
+            // buttonSale
+            // 
+            this.buttonSale.Location = new System.Drawing.Point(52, 141);
+            this.buttonSale.Name = "buttonSale";
+            this.buttonSale.Size = new System.Drawing.Size(107, 23);
+            this.buttonSale.TabIndex = 7;
+            this.buttonSale.Text = "Оформить";
+            this.buttonSale.UseVisualStyleBackColor = true;
+            this.buttonSale.Click += new System.EventHandler(this.buttonSale_Click);
             // 
             // groupBox2
             // 
@@ -322,16 +333,6 @@ namespace ADO_EF
             this.buttonAddProduct.Text = "Товар";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
             this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
-            // 
-            // buttonSale
-            // 
-            this.buttonSale.Location = new System.Drawing.Point(52, 141);
-            this.buttonSale.Name = "buttonSale";
-            this.buttonSale.Size = new System.Drawing.Size(107, 23);
-            this.buttonSale.TabIndex = 7;
-            this.buttonSale.Text = "Оформить";
-            this.buttonSale.UseVisualStyleBackColor = true;
-            this.buttonSale.Click += new System.EventHandler(this.buttonSale_Click);
             // 
             // Form1
             // 

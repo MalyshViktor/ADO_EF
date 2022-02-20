@@ -32,8 +32,8 @@ namespace ADO_EF.Forms
             {
                 comboBoxManager1.Items.Add(manager);
             }
-            textBoxCountSale.Text = EditedSale.Cnt.ToString();
-            dateTimePicker1.Value = EditedSale.Moment;
+            //textBoxCountSale.Text = EditedSale.Cnt.ToString();
+            //dateTimePicker1.Value = EditedSale.Moment;
 
         }
 
@@ -45,7 +45,7 @@ namespace ADO_EF.Forms
             }
             else 
             {
-                EditedSale.Cnt = Convert.ToInt32(textBoxCountSale.Text);
+                //EditedSale.Cnt = Convert.ToInt32(textBoxCountSale.Text);
             }
 
             if (dateTimePicker1.Value.Date > DateTime.Now)
@@ -54,7 +54,7 @@ namespace ADO_EF.Forms
             }
             else 
             {
-                EditedSale.Moment = dateTimePicker1.Value.Date;
+                //EditedSale.Moment = dateTimePicker1.Value.Date;
             }
             
             this.DialogResult = DialogResult.OK;

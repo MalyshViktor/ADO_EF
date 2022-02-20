@@ -111,7 +111,7 @@ namespace ADO_EF
         private void button5_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            foreach (var item in Firm.Sales.
+            foreach (var item in Firm.Sales.OrderBy(s => s.Moment).
                 Join
                 (Firm.Managers,
                 s => s.Id_manager,
@@ -134,7 +134,7 @@ namespace ADO_EF
         {
             listBox1.Items.Clear();
             
-            foreach (var item in Firm.Sales.Where(s => DbFunctions.TruncateTime(s.Moment) == dateTimePicker1.Value.Date).
+            foreach (var item in Firm.Sales.OrderBy(s=>s.Moment).Where(s => DbFunctions.TruncateTime(s.Moment) == dateTimePicker1.Value.Date).
                 Join
                 (Firm.Managers,
                 s => s.Id_manager,

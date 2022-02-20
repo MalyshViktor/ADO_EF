@@ -16,9 +16,8 @@ namespace ADO_EF.Forms
         public Model.Sale EditedSale { get; set; }
         public EditSaleForm(Model.FirmContext Firm)
         {
-            InitializeComponent();
             _Firm = Firm;
-            
+            InitializeComponent();
         }
 
         private void EditSaleForm_Load(object sender, EventArgs e)
@@ -33,6 +32,8 @@ namespace ADO_EF.Forms
             {
                 comboBoxManager1.Items.Add(manager);
             }
+            textBoxCountSale.Text = EditedSale.Cnt.ToString();
+            dateTimePicker1.Value = EditedSale.Moment;
 
         }
 
